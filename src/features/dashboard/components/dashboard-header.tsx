@@ -17,14 +17,14 @@ function DashboardHeader() {
       </div>
 
       <div className="lg:flex flex-center gap-3 hidden">
-        <Button variant="outline" size="sm">
-          <Link href="mailto:rabbi.builds@gmail.com">
+        <Button variant="outline" size="sm" >
+          <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">
             <ThumbsUp />
             <span className="hidden lg:block">FeedBack</span>
           </Link>
         </Button>
         <Button variant="outline" size="sm" >
-          <Link href="mailto:rabbi.builds@gmail.com">
+          <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">
             <Headphones />
             <span className="hidden lg:block">FeedBack</span>
           </Link>

@@ -26,6 +26,8 @@ import {
   Volume2,
   Settings,
   Headphones,
+  MicAudioLines,
+  Music,
 } from "lucide-react";
 import Link from "next/link";
 import { AvatarDropdown } from "@/components/own/user-button";
@@ -108,6 +110,17 @@ export default function DashboardSidebar() {
       url: "/voice-cloning",
       icon: Volume2,
     },
+   
+    {
+      title: "Speech to text",
+      url: "/speech-to-text",
+      icon: MicAudioLines
+    },
+     {
+      title:"Music",
+      url:"/music",
+      icon: Music
+    }
   ];
 
   const otherMenuItems: MenuItem[] = [
@@ -131,12 +144,12 @@ export default function DashboardSidebar() {
           <Image
             src="/logo.png"
             alt="logo"
-            width={24}
-            height={24}
+            width={25}
+            height={25}
             className="rounded-sm"
           ></Image>
           <span className="group-data-[collapsible=icon]:hidden font-semibold text-lg tracking-tighter text-foreground">
-            Voice Studio
+            Voxora
           </span>
           <SidebarTrigger className="ml-auto lg:hidden" />
         </div>

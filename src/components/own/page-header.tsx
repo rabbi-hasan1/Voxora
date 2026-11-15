@@ -19,7 +19,7 @@ export function PageHeader({
     >
       <div className="flex flex-center items-center gap-2">
         <SidebarTrigger />
-        <h1 className="md:text-lg text-balance font-semibold tracking-tight">{title}</h1>
+        <h1 className=" text-balance font-semibold tracking-tight">{title}</h1>
       </div>
       <div className="flex flex-center gap-3">
         <Button variant="outline" size="sm" >
@@ -34,6 +34,8 @@ export function PageHeader({
             <span className="hidden lg:block">FeedBack</span>
           </Link>
         </Button>
+
+        
 
          <Button variant="outline" size="sm">
           <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">

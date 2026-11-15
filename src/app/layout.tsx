@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Voxora",
-    template: "%s | Voice-Studio",
+    template: "%s | Voxora",
   },
   description: "AI-powerd text-to-speech and voice cloing platform",
 };

@@ -1,7 +1,9 @@
+import TextToSpeechView from "@/features/text-to-speech/views/text-to-speech-view";
+
 export default function TextToSpeech(){
     return(
         <div>
-            <p className="text-center my-5">text to speech</p>
+            <TextToSpeechView />
         </div>
     );
 }
