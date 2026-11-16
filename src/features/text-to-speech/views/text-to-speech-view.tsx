@@ -5,9 +5,11 @@ import { VoicePreviewPlaceholder } from "../components/voice-preview-placeholder
 export default function TextToSpeechView() {
   return (
     <div className="flex min-h-0 flex-1 overflow-hidden">
-      <div className="flex min-h-0 flex-1 flex-col">
-       <TextToSpeechInputPanel/>
-        <VoicePreviewPlaceholder />
+      <div className="flex min-h-screen flex-1 flex-col">
+        <div className=" md:h-[60%] h-[90vh]">
+          <TextToSpeechInputPanel  />
+        </div>
+         <VoicePreviewPlaceholder />
       </div>
       <div>
         <SettingsPanel />
@@ -15,3 +17,5 @@ export default function TextToSpeechView() {
     </div>
   );
 }
+
+
