@@ -3,10 +3,13 @@ import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
-import { Coins } from "lucide-react";
+import { Coins, Database } from "lucide-react";
 
 import { TEXT_MAX_LENGTH, COST_PER_UNIT } from "../data/constants";
 import { GenerateButton } from "./generate-button";
+import { MobileSettingsDrawer } from "./mobile-settings-drawer";
+import { MobileHistoryDrawer } from "./mobile-history-drawer";
+import { Button } from "@/components/ui/button";
 
 export function TextToSpeechInputPanel() {
   const [text, setText] = useState("");
@@ -23,10 +26,8 @@ export function TextToSpeechInputPanel() {
 
   return (
     <div className="relative flex h-full min-h-0 w-full min-w-0 flex-col">
-
       {/* Textarea */}
       <div className="relative min-h-0 min-w-0 flex-1">
-
         <Textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -52,7 +53,6 @@ export function TextToSpeechInputPanel() {
 
         {/* Bottom fade */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-t from-background to-transparent" />
-
       </div>
 
       {/* Mobile action bar */}
@@ -67,17 +67,29 @@ export function TextToSpeechInputPanel() {
           lg:hidden
         "
       >
+        <div className="flex flex-row items-center justify-between">
+          <Button variant="outline" size="icon">
+            <Database />
+          </Button>
+          <div className="flex gap-3 items-center">
+            <MobileSettingsDrawer />
+            <MobileHistoryDrawer />
+          </div>
+        </div>
 
+        <GenerateButton
+          className="w-full p-5"
+          disabled={!isValid}
+          isSubmitting={false}
+          onSubmit={handleSubmit}
+        />
         {text.length > 0 && (
           <div className="flex items-center justify-between">
-
             <Badge variant="outline" className="gap-1.5 border-dashed">
               <Coins className="size-3 text-chart-5" />
 
               <span className="text-xs">
-                <span className="tabular-nums">
-                  ${estimatedCost}
-                </span>
+                <span className="tabular-nums">${estimatedCost}</span>
                 &nbsp; estimated
               </span>
             </Badge>
@@ -90,31 +102,18 @@ export function TextToSpeechInputPanel() {
                 {TEXT_MAX_LENGTH.toLocaleString()} characters
               </span>
             </p>
-
           </div>
         )}
-
-        <GenerateButton
-         
-          className="w-full p-5"
-          disabled={!isValid}
-          isSubmitting={false}
-          onSubmit={handleSubmit}
-        />
-
       </div>
 
       {/* Desktop action bar */}
       <div className="hidden shrink-0 items-center justify-between p-4 lg:flex lg:p-6">
-
         {text.length > 0 ? (
           <Badge variant="outline" className="gap-1.5 border-dashed">
             <Coins className="size-3 text-chart-5" />
 
             <span className="text-xs">
-              <span className="tabular-nums">
-                ${estimatedCost}
-              </span>
+              <span className="tabular-nums">${estimatedCost}</span>
               &nbsp; estimated
             </span>
           </Badge>
@@ -123,7 +122,6 @@ export function TextToSpeechInputPanel() {
         )}
 
         <div className="flex items-center gap-3">
-
           <p className="text-xs tracking-tight">
             {text.length.toLocaleString()}
 
@@ -139,11 +137,8 @@ export function TextToSpeechInputPanel() {
             isSubmitting={false}
             onSubmit={handleSubmit}
           />
-
         </div>
-
       </div>
-
     </div>
   );
 }

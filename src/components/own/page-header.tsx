@@ -1,8 +1,8 @@
-import { Bell, Headphones, ThumbsUp } from "lucide-react";
-import Link from "next/link";
-import { Button } from "../ui/button"; 
+import { Bell} from "lucide-react";
+import { Button } from "../ui/button";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { AvatarDropdown } from "./user-button";
 export function PageHeader({
   title,
   className,
@@ -13,36 +13,24 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        "flex flex-center justify-between border-b px-4 py-4 ",
+        "flex flex-center justify-between border-b px-4 py-3 ",
         className,
       )}
     >
-      <div className="flex flex-center items-center gap-2">
+      <div className="flex flex-center items-center gap-1">
         <SidebarTrigger />
         <h1 className=" text-balance font-semibold tracking-tight">{title}</h1>
       </div>
-      <div className="flex flex-center gap-3">
-        <Button variant="outline" size="sm" >
-          <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">
-            <ThumbsUp />
-            <span className="hidden lg:block">FeedBack</span>
-          </Link>
-        </Button>
-        <Button variant="outline" size="sm">
-          <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">
-            <Headphones />
-            <span className="hidden lg:block">FeedBack</span>
-          </Link>
+      <div className="flex flex-center gap-3 items-center">
+        <Button variant="outline" size="sm" className="py-4">
+          FeedBack
         </Button>
 
-        
-
-         <Button variant="outline" size="sm">
-          <Link href="mailto:rabbi.builds@gmail.com" className="flex flex-row gap-1 items-center">
-            <Bell />
-            <span className="hidden lg:block">Notifications</span>
-          </Link>
+        <Button variant="outline" size="default">
+          <Bell />
         </Button>
+
+        <AvatarDropdown />
       </div>
     </div>
   );
