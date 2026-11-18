@@ -8,6 +8,7 @@ function DashboardView() {
       <PageHeader title='Dashboard' className='' />
       <div className=' relative space-y-8 p-4 lg:p-8'>
         <DashboardHeader />
+
       </div>
     </div>
   )

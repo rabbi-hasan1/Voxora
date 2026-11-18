@@ -6,7 +6,7 @@ export default function TextToSpeechView() {
   return (
     <div className="flex min-h-0 flex-1 overflow-hidden">
       <div className="flex min-h-screen flex-1 flex-col">
-        <div className=" md:h-[60%] h-[90vh]">
+        <div className=" md:h-[60%] h-[80vh] pb-12">
           <TextToSpeechInputPanel  />
         </div>
          <VoicePreviewPlaceholder />
